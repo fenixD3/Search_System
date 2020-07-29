@@ -24,9 +24,3 @@ vector<string_view> SplitIntoWords(string_view line)
 		views.push_back(word);
 	return views;
 }
-
-/*vector<string> SplitIntoWords(const string& line)
-{
-	istringstream words_input(line);
-	return {istream_iterator<string>(words_input), istream_iterator<string>()};
-}*/

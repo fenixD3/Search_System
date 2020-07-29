@@ -23,45 +23,8 @@ void SearchServer::UpdateDocumentBase(istream& document_input)
 
 SearchServer::SearchServer(istream& document_input)
 {
-	//UpdateDocumentBase(document_input);
 	UpdateIndex(document_input, index);
 }
-
-/*static void MakeQueryAnswer(istream& query_input, ostream& search_results_output, Synchronized<InvertedIndex>& index)
-{
-	vector<pair<size_t, int64_t>> docid_count;
-	for (string current_query; getline(query_input, current_query); )
-	{
-		const auto words = SplitIntoWords(current_query);
-		{
-			auto access = index.GetAccess();
-			docid_count.assign(access.ref_to_value.GetDocsCnt(), {0, 0});
-			for (const auto &word : words)
-				for (const auto& [docid, raiting] : access.ref_to_value.Lookup(word))
-				{
-					docid_count[docid].first = docid;
-					docid_count[docid].second += raiting;
-				}
-		}
-
-		partial_sort(docid_count.begin(), docid_count.begin() + min<size_t>(docid_count.size(), 5), docid_count.end(),
-			[](pair<size_t, int64_t>& lhs,  pair<size_t, int64_t>& rhs)
-			{
-				return make_pair<size_t, int64_t>(lhs.second, -lhs.first) >
-					make_pair<size_t, int64_t>(rhs.second, -rhs.first);
-			});
-
-		search_results_output << current_query << ':';
-		for (auto[docid, hitcount] : Head(docid_count, 5))
-		{
-			if (!hitcount)
-				break ;
-			search_results_output << " {" << "docid: " << docid << ", "
-								  << "hitcount: " << hitcount << '}';
-		}
-		search_results_output << endl;
-	}
-}*/
 
 static void MakeQueryAnswer(istream& query_input, ostream& search_results_output, Synchronized<InvertedIndex>& index)
 {

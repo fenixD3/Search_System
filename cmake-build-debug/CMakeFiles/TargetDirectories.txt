@@ -1,3 +1,0 @@
-/Users/Student/Desktop/Coursera/Yandex_red_belt/Final_search_system_server_with_synhronize/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/Student/Desktop/Coursera/Yandex_red_belt/Final_search_system_server_with_synhronize/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Student/Desktop/Coursera/Yandex_red_belt/Final_search_system_server_with_synhronize/cmake-build-debug/CMakeFiles/Final_search_system_server_with_synhronize.dir

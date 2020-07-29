@@ -7,15 +7,15 @@ template <typename It>
 class IteratorRange
 {
 public:
-	IteratorRange(It first, It last)
-		: first(first)
-		, last(last)
-	{}
+    IteratorRange(It first, It last)
+        : first(first)
+        , last(last)
+    {}
 
-	It begin() const
-	{
-		return first;
-	}
+    It begin() const
+    {
+        return first;
+    }
 
   It end() const
   {
